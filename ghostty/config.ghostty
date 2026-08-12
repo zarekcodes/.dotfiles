@@ -1,0 +1,28 @@
+command = /usr/bin/fish
+
+# Window appearance
+background-opacity = 0.95
+background-blur = true
+
+# Cursor
+cursor-style = block
+mouse-hide-while-typing = true
+
+# Theme
+#theme = "Catppuccin Mocha"
+#theme = "TokyoNight"
+#theme = "IBM 5153 CGA"
+#theme = "IBM 5153 CGA (Black)"
+#theme = "Dark Pastel"
+theme = "Carbonfox"
+
+# Fonts
+font-size = 14
+
+# Font family
+font-family = "Iosevka Nerd Font"
+font-style = "Medium"
+font-style-italic = "Medium Italic"
+font-style-bold = "Bold"
+font-style-bold-italic = "Bold Italic"
+
