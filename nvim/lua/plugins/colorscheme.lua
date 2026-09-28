@@ -1,20 +1,18 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     opts = {
-      style = "night",
-      transparent = true,
+      flavour = "frappe",
+      transparent_background = true,
       styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
+        comments = { "italic" },
+        keywords = { "italic" },
       },
-      on_highlights = function(hl)
-        hl.CursorLine = { bg = "#1e2030" }
-      end,
     },
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "tokyonight" },
+    opts = { colorscheme = "catppuccin-frappe" },
   },
 }

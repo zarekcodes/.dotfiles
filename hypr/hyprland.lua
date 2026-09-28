@@ -71,8 +71,8 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "20")
+hl.env("HYPRCURSOR_SIZE", "20")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -106,7 +106,7 @@ hl.config({
 
 		col = {
 			--active_border = { colors = { "rgba(6a8c6dee)", "rgba(6a578cee)" }, angle = 45 },
-			active_border = "rgba(6a578cee)",
+			active_border = "rgba(88c0d0ee)",
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -251,7 +251,7 @@ hl.config({
 
 		touchpad = {
 			natural_scroll = true,
-			scroll_factor = 0.8,
+			scroll_factor = 0.6,
 		},
 	},
 })
