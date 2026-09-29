@@ -1,0 +1,271 @@
+# Noctalia v5 config, exported with `noctalia config export`.
+# Settings changed in the GUI are saved to ~/.local/state/noctalia/settings.toml,
+# which overrides this file. Re-export to sync them back into the repo.
+# Machine-specific sections ([location], [wallpaper]) are left out on purpose.
+
+[accessibility]
+ui_scale = 1.15
+
+[bar.default]
+background_opacity = 0.89
+capsule_thickness = 0.71
+end = [ "bluetooth", "network", "battery", "control-center" ]
+font_family = "Iosevka Nerd Font Mono"
+font_scale = 1.15
+font_weight = 700
+margin_ends = 0
+padding = 10
+panel_overlap = 0
+radius = 0
+shadow = false
+start = [ "notifications", "spacer_2", "workspaces" ]
+thickness = 19
+widget_spacing = 10
+
+    [bar.default.dead_zone.actions]
+    middle = "panel-toggle control-center home"
+    right = "none"
+
+[battery]
+warning_threshold = 20
+
+[brightness]
+sync_all_monitors = true
+
+[control_center]
+hidden_tabs = [ "screen-time" ]
+sidebar = "full"
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "dark_mode"
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 1800.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-2", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-2"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.95
+
+[osd]
+monitors = [ "eDP-1" ]
+
+[plugins]
+auto_update = "none"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+button_borders = false
+font_family = "Iosevka NFM Medium"
+lang = "en"
+popup_shadows = false
+
+    [shell.animation]
+    speed = 2.0
+
+    [shell.launcher]
+    categories = false
+    compact = true
+    fetch_exchange_rates = false
+
+        [shell.launcher.providers.calculator]
+        global = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[system.monitor]
+cpu_poll_seconds = 0
+disk_poll_seconds = 0
+gpu_poll_seconds = 0
+memory_poll_seconds = 0
+network_poll_seconds = 5
+
+[theme]
+builtin = "Nord"
+community_palette = "Tokyo Night Storm"
+wallpaper_scheme = "m3-rainbow"
+
+[weather]
+refresh_minutes = 60
+unit = "imperial"
+
+[widget.battery]
+scale = 1.05
+
+    [widget.battery.actions]
+    middle = "none"
+
+[widget.clock]
+format = "{:%-I:%M %p %a %d %B}"
+scale = 1.05
+
+    [widget.clock.actions]
+    middle = "none"
+
+[widget.control-center]
+custom_image = "/usr/share/pixmaps/archlinux-logo.png"
+font_family = "Iosevka NFP"
+glyph = ""
+
+[widget.network]
+font_weight = 700
+show_label = false
+
+[widget.notifications.actions]
+middle = "none"
+
+[widget.spacer_2]
+length = 13
+type = "spacer"
+
+[widget.sysmon]
+glyph_position = "after"
+show_value = true
+visualization = "none"
+
+[widget.workspaces]
+active_pill_size = 1.8
+max_label_chars = 2
+pill_scale = 0.9
+scale = 0.95
+
+    [widget.workspaces.actions]
+    middle = "none"
+    scroll_down = "none"
+    scroll_up = "none"
