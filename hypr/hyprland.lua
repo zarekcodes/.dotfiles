@@ -277,6 +277,8 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+-- Floating terminal in the bottom-left corner for desktop screenshots (see "showcase-terminal" rule)
+hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd(terminal .. " --class=ghostty.showcase"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser1))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("bash -c 'grim -g \"$(slurp)\" - | wl-copy'"))
@@ -414,4 +416,14 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
+})
+
+-- Screenshot terminal: floats in the bottom-left corner, sized to fit fastfetch
+hl.window_rule({
+	name = "showcase-terminal",
+	match = { class = "ghostty.showcase" },
+
+	float = true,
+	size = "960 600",
+	move = "20 monitor_h-window_h-20",
 })
