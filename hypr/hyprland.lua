@@ -71,8 +71,8 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "20")
-hl.env("HYPRCURSOR_SIZE", "20")
+hl.env("XCURSOR_SIZE", "18")
+hl.env("HYPRCURSOR_SIZE", "18")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -244,14 +244,14 @@ hl.config({
 
 		follow_mouse = 1,
 
-		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+		sensitivity = 0.7, -- -1.0 - 1.0, 0 means no modification.
 
 		repeat_rate = 50,
 		repeat_delay = 250,
 
 		touchpad = {
 			natural_scroll = true,
-			scroll_factor = 0.6,
+			scroll_factor = 0.7,
 		},
 	},
 })
