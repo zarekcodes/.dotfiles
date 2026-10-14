@@ -25,8 +25,8 @@ font-size = 13
 
 # Font family
 font-family = "Iosevka Nerd Font"
-font-style = "Regular"
-font-style-italic = "Italic"
+font-style = "Medium"
+font-style-italic = "Medium Italic"
 font-style-bold = "Bold"
 font-style-bold-italic = "Bold Italic"
 
