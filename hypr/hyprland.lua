@@ -280,7 +280,10 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd(terminal .. " --class=ghostty.showcase"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser1))
+-- Region screenshot to the clipboard only (nothing saved)
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("bash -c 'grim -g \"$(slurp)\" - | wl-copy'"))
+-- Region screenshot, then a "Save As" dialog (see "float-screenshot-save" rule)
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot-save.sh"))
 
 -- Noctalia binds
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
@@ -425,4 +428,13 @@ hl.window_rule({
 	float = true,
 	size = "960 600",
 	move = "20 monitor_h-window_h-20",
+})
+
+-- Screenshot "Save As" dialog: float it instead of tiling it beside the current window.
+-- Matched by title because the dialog may be drawn by zenity or by the file chooser portal.
+hl.window_rule({
+	name = "float-screenshot-save",
+	match = { title = "^Save screenshot$" },
+
+	float = true,
 })
