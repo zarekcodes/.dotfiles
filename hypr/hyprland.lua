@@ -177,22 +177,21 @@ hl.animation({ leaf = "windows", enabled = true, speed = 1, spring = "easy" })
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 1, spring = "easy", style = "popin 87%" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1, spring = "easy", style = "popin 87%" })
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
+-- "Smart borders": no border or rounding when a window is alone on its workspace.
+-- Gaps are already 0 globally, so the matching gap workspace rules aren't needed.
+-- w[tv1] = exactly one tiled, visible window; f[1] = a maximized window.
+hl.window_rule({
+	name = "no-border-wtv1",
+	match = { float = false, workspace = "w[tv1]" },
+	border_size = 0,
+	rounding = 0,
+})
+hl.window_rule({
+	name = "no-border-f1",
+	match = { float = false, workspace = "f[1]" },
+	border_size = 0,
+	rounding = 0,
+})
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
@@ -244,7 +243,7 @@ hl.config({
 
 		follow_mouse = 1,
 
-		sensitivity = 0.7, -- -1.0 - 1.0, 0 means no modification.
+		sensitivity = 0.5, -- -1.0 - 1.0, 0 means no modification.
 
 		repeat_rate = 50,
 		repeat_delay = 250,
